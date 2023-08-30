@@ -10,7 +10,7 @@ public class Cameras : MonoBehaviour
     private Camera cam;
     [SerializeField]
     private float zoomStep;
-    private float minSize = 3f, maxSize = 20f, mapMinX, mapMaxX, mapMinY, mapMaxY;
+    private float minSize = 3f, maxSize = 520f, mapMinX, mapMaxX, mapMinY, mapMaxY;
     private Vector3 originDrag, atualPoint;
     [SerializeField]
     private Renderer mapRenderer;
@@ -32,11 +32,11 @@ public class Cameras : MonoBehaviour
 
     private void Mover()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(2))
         {
             originDrag = cam.ScreenToWorldPoint(Input.mousePosition);
         }
-        if(Input.GetMouseButton(0))
+        if(Input.GetMouseButton(2))
         {
             Vector3 difference = originDrag - cam.ScreenToWorldPoint(Input.mousePosition);
 
